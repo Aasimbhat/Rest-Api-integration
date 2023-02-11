@@ -12,6 +12,5 @@ class RemoteService //this file responsible for fetching data
      var json=response.body;
       return postsFromJson(json);
     }
-
   }
 }
