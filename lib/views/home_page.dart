@@ -33,61 +33,81 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
+        backgroundColor: Colors.black12,
         title: Text(
-          "Posts"
+          "Posts Fetched",
+          style: TextStyle(
+            color: Colors.grey[700],
+            fontWeight: FontWeight.bold,
+            fontSize: 28
+          ),
         ),
+        
+
       ),
       body: Visibility(
         visible: isLoaded,
         child: ListView.builder(
           itemCount: posts?.length,
           itemBuilder: (context , index){
-            return Container(
-              padding: EdgeInsets.all(16),
-              child:Row(
-                children: [
-                  Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: Colors.grey[500],
-                      image: DecorationImage(
-                        image: AssetImage(
-                          "asset/img2.jpg"
-                        ))
+            return Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Container(
+                
+                height: 130,
+                width: 600,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.grey[700],
+                ),
+                padding: EdgeInsets.all(16),
+                child:Row(
+                  children: [
+                    Container(
+                      height: 70,
+                      width: 70,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: Colors.grey[500],
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "asset/img2.jpg"
+                            
+                          ))
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 16 ,
-                  ),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(posts![index].title,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),),
-                        Text(posts![index].body,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),),
-                  
-                      ],
+                    SizedBox(
+                      width: 16 ,
                     ),
-                  ),
-                ],
-              ) ,
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(posts![index].title,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),),
+                          Text(posts![index].body,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),),
+                    
+                        ],
+                      ),
+                    ),
+                  ],
+                ) ,
+              ),
             );
       
           }
