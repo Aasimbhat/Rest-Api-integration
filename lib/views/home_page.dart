@@ -52,7 +52,11 @@ class _HomePageState extends State<HomePage> {
                     width: 50,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
-                      color: Colors.grey[500]
+                      color: Colors.grey[500],
+                      image: DecorationImage(
+                        image: AssetImage(
+                          "asset/img2.jpg"
+                        ))
                     ),
                   ),
                   SizedBox(
